@@ -7,7 +7,7 @@ use ieee.std_logic_1164.all;
 entity full_adder_4bit is port (
    BUS0_b3, BUS1_b3, BUS0_b2, BUS1_b2, BUS0_b1, BUS1_b1, BUS0_b0, BUS1_b0 : in std_logic; -- Input bits for 2-1 muxs
  	Carry_In   		: in  std_logic; -- Input carry bit for first 2-1 mux
-	Carry_Out3		: out std_logic; -- Output carry MSB for last 2-1 mux
+	Carry_Out3		: out std_logic; -- Output carry out bit (MSB) for last 2-1 mux
 	SUM				: out std_logic_vector(3 downto 0) -- Output sum bits from all four 2-1 muxs, stored in a 4-bit vector
    
 	
