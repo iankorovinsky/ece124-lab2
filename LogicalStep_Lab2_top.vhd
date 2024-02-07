@@ -92,7 +92,7 @@ architecture SimpleCircuit of LogicalStep_Lab2_top is
 	signal hex_B      : std_logic_vector(3 downto 0);
 	signal pb			: std_logic_vector(3 downto 0);
 	signal full_adder_4bit_hex_sum : std_logic_vector(3 downto 0);
-	
+
 	signal carry_out3_remaining : std_logic;
 	signal carry_out3_concatenation : std_logic_vector(3 downto 0);
 	signal Operand_A : std_logic_vector(3 downto 0);
@@ -102,6 +102,9 @@ architecture SimpleCircuit of LogicalStep_Lab2_top is
 -- Here the circuit begins
 
 begin
+
+	-- Logic for connecting switches to binary operand signals, and defining how components are interconnected.
+	-- This includes mapping input switches to operands, connecting full adders, and managing display outputs.
 
 	hex_A <= sw(3 downto 0);
 	hex_B <= sw(7 downto 4);
