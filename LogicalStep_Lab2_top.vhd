@@ -106,19 +106,30 @@ begin
 	-- Logic for connecting switches to binary operand signals, and defining how components are interconnected.
 	-- This includes mapping input switches to operands, connecting full adders, and managing display outputs.
 
+	-- maps out switch inputs 
 	hex_A <= sw(3 downto 0);
 	hex_B <= sw(7 downto 4);
 	
 	--COMPONENT HOOKUP
 	--generate the seven segment coding
 	
+	-- carry 
 	carry_out3_concatenation <= "000" & carry_out3_remaining; 
 	
+	-- 4 bit adder that takes in switch inputs and outputs the sum and carry out
 	INST0: full_adder_4bit port map (hex_A(3), hex_B(3), hex_A(2), hex_B(2), hex_A(1), hex_B(1), hex_A(0), hex_B(0), '0', carry_out3_remaining, full_adder_4bit_hex_sum);
+	
+	-- decoders for the binary data
 	INST1: SevenSegment port map(Operand_A, seg7_A);
 	INST2: SevenSegment port map(Operand_B, seg7_B);
+
+	-- 7 segment display multiplexer
 	INST3: segment7_mux port map(clkin_50, seg7_A, seg7_B, seg7_data, seg7_char2, seg7_char1);
+
+	-- Inverter
 	INST4: PB_Inverters port map(pb_n, pb);
+
+	-- 2 - 1 Multiplexers
 	INST5: logic_mux port map(hex_A, hex_B, pb(1 downto 0), leds(3 downto 0));
 	INST6: logic_mux2 port map (hex_B, carry_out3_concatenation, pb(2), Operand_B);
 	INST7: logic_mux2 port map (hex_A, full_adder_4bit_hex_sum, pb(2), Operand_A);
