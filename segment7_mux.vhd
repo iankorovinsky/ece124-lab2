@@ -45,10 +45,6 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 
--- ****************************************************************************
--- *  Entity                                                                  *
--- ****************************************************************************
-
 entity segment7_mux is
    port (
           clk        : in  std_logic := '0';
@@ -60,9 +56,6 @@ entity segment7_mux is
         );
 end entity segment7_mux;
 
--- *****************************************************************************
--- *  Architecture                                                             *
--- *****************************************************************************
 
 architecture syn of segment7_mux is
 	
@@ -71,11 +64,6 @@ architecture syn of segment7_mux is
    
 begin
 
-   ----------------------------------------------
-   -- Register File
-   ----------------------------------------------
-
-  
   	clk_proc:process(CLK)
   	variable COUNT			:unsigned(10 downto 0) := "00000000000";
   	begin 
