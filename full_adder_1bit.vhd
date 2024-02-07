@@ -6,7 +6,7 @@ use ieee.std_logic_1164.all;
 -- Define full adder (1 bit) entity
 entity full_adder_1bit is
 port (
-	INPUT_A, INPUT_B 						: in std_logic; -- Input bits A and B
+	INPUT_A, INPUT_B 						: in std_logic; -- Input mux bits
 	CARRY_IN                         : in std_logic; -- Input carry bit
 	FULL_ADDER_CARRY_OUTPUT          : out std_logic; -- Output carry bit
 	FULL_ADDER_SUM_OUTPUT            : out std_logic -- Output sum bit
