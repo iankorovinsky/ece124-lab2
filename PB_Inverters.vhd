@@ -8,7 +8,7 @@ ENTITY PB_Inverters IS
 	PORT
 	(
 		pb_n : IN std_logic_vector(3 downto 0); -- Input 4 bit button vector
-		pb : OUT std_logic_vector(3 downto 0) -- Output 4 bit vector
+		pb : OUT std_logic_vector(3 downto 0) -- Output 4 bit vector corresponding to inverted buttons
 	);
 END PB_Inverters;
 
