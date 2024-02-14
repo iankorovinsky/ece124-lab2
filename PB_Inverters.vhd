@@ -1,4 +1,4 @@
--- Members: Ian Korovinsky and Steven Yang
+-- Members: Ian Korovinsky and Steven Yang | Lab2_REPORT | LS206 | Group 17
 -- Import packages
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
